@@ -2,7 +2,7 @@
 
 ## Calendars.Read
 
-### Supported Permission Types
+### Permission Types
 **App-only**
 
 Azure AD portal display: Read calendars in all mailboxes<br/>
@@ -17,8 +17,6 @@ Admin consent required: No
 
 Allows your app to read events in user calendars. 
 
-### Details
-
 ### Common Scenarios
 **App-only**
 
@@ -26,7 +24,7 @@ Allows your app to read events in user calendars.
 
 
 ## Group.ReadWrite.All
-### Supported Permission Types
+### Permission Types
 **App-only**
 
 Azure AD portal display: Read and write all groups<br/>
@@ -69,12 +67,12 @@ For more information, see [known issues](../overview/release_notes.md#groups).
 
 **Delegated**
 
-* Your app presents a group-picker that lets a user join a group by choosing from an enumerated list of Office 365 groups that is based on search criteria entered by the user. The app needs to both discover (find) Office 365 groups and update the membership of the chosen group. (Delegated)
+* Your app presents a group-picker that lets a user join a group by choosing from an enumerated list of Office 365 groups that is based on search criteria entered by the user. The app needs to both discover (find) Office 365 groups and update the membership of the chosen group.
 * Your app lets a user create groups. 
 
 ## User.Read
 
-### Supported Permission Types
+### Permission Types
 **App-only**
 
 Not Supported
@@ -84,10 +82,10 @@ Not Supported
 Azure AD portal display: Sign-in and read user profile<br/>
 Admin consent required: No
 
-Allows users to sign-in to your app and allows your app to read the (full) profile of the signed-in user. Also allows your app to read the following basic company information of the signed-in user (through the **TenantDetail** object): tenant ID, tenant display name, and verified domains. 
+Allows users to sign-in to your app and allows your app to read the (full) profile of the signed-in user. Also allows your app to read the following basic company information of the signed-in user (through the [Organization](../api-reference/v1.0/resources/organization.md) resource): tenant ID, tenant display name, and verified domains. 
 
 ### Details
-The full profile includes all of the declared properties of the User resource. <br/>This permission doesn't allow your app to read relationships (navigation properties), such as manager or direct reports; for these privileges, see _User.Read.All_ or _User.ReadBasic.All_.
+The full profile includes all of the declared properties of the [User](../api-reference/v1.0/resources/user.md) resource. <br/><br/>This permission doesn't allow your app to read relationships (navigation properties), such as manager or direct reports; for these privileges, see _User.Read.All_ or _User.ReadBasic.All_.
 
 ### Common Scenarios
 **Delegated**
