@@ -1,8 +1,17 @@
 # Microsoft Graph permissions reference
 
-**[User Permissions](#User_Permissions)**
+**[Calendar Permissions](#Calendar_Permissions)**<br>
+[Read calendars in all mailboxes](#Read_calendars_in_all_mailboxes) [Read user calendars](#Read_user_caalendars)
 
+**[Group Permissions](#Group_Permissions)**<br/>
+[Read and write all groups](#Read_and_write_all_groups)
+
+**[User Permissions](#User_Permissions)**<br/>
+[Sign-in and read user profile](#Sign-in_and_read_user_profile)
+
+<a name="Calendar_Permissions"></a>
 ## Calendar Permissions
+<a name="Read_calendars_in_all_mailboxes"></a>
 ### Read calendars in all mailboxes
 
 #### Permission Type: 
@@ -17,6 +26,7 @@ Allows the app to read events of all calendars without a signed-in user.
 
 * Your app reads users' calendars in an organization and publishes schedules for a meeting room. 
 
+<a name="Read_user_caalendars"></a>
 ### Read user calendars
 #### Permission Type
 **Delegated**
@@ -30,7 +40,9 @@ Allows your app to read events in user calendars.
 
 * Your app reads the calendar of the signed-in user and raises an alarm on her mobile device before meetings. 
 
+<a name="Groupr_Permissions"></a>
 ## Group Permissions
+<a name="Read_and_write_all_groups"></a>
 ### Read and write all groups
 #### Permission Type
 **Application**
@@ -77,8 +89,9 @@ For more information, see [known issues](../overview/release_notes.md#groups).
 * Your app presents a group-picker that lets a user join a group by choosing from an enumerated list of Office 365 groups that is based on search criteria entered by the user. The app needs to both discover (find) Office 365 groups and update the membership of the chosen group.
 * Your app lets a user create groups. 
 
-## User Permissions
 <a name="User_Permissions"></a>
+## User Permissions
+<a name="Sign-in_and_read_user_profile""></a>
 ### Sign-in and read user profile
 
 #### Permission Types
