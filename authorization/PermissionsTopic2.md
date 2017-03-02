@@ -14,7 +14,7 @@
 <a name="Read_calendars_in_all_mailboxes"></a>
 ### Read calendars in all mailboxes
 
-#### Permission Type: 
+#### Permission Type 
 **Application**
 
 Admin consent required: Yes<br/>
