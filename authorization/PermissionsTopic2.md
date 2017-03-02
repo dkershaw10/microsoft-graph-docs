@@ -1,13 +1,10 @@
 # Microsoft Graph permissions reference
 
-**[Calendar Permissions](#Calendar_Permissions)**<br>
-[Read calendars in all mailboxes](#Read_calendars_in_all_mailboxes) [Read user calendars](#Read_user_caalendars)
+**[Calendar Permissions](#Calendar_Permissions)**: [Read calendars in all mailboxes](#Read_calendars_in_all_mailboxes) [Read user calendars](#Read_user_caalendars)
 
-**[Group Permissions](#Group_Permissions)**<br/>
-[Read and write all groups](#Read_and_write_all_groups)
+**[Group Permissions](#Group_Permissions)**: [Read and write all groups](#Read_and_write_all_groups)
 
-**[User Permissions](#User_Permissions)**<br/>
-[Sign-in and read user profile](#Sign-in_and_read_user_profile)
+**[User Permissions](#User_Permissions)**: [Sign-in and read user profile](#Sign-in_and_read_user_profile)
 
 <a name="Calendar_Permissions"></a>
 ## Calendar Permissions
