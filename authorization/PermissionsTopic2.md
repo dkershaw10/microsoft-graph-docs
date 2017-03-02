@@ -1,5 +1,7 @@
 # Microsoft Graph permissions reference
 
+**[User Permissions](#User_Permissions)**
+
 ## Calendar Permissions
 ### Read calendars in all mailboxes
 
@@ -76,6 +78,7 @@ For more information, see [known issues](../overview/release_notes.md#groups).
 * Your app lets a user create groups. 
 
 ## User Permissions
+<a name="User_Permissions"></a>
 ### Sign-in and read user profile
 
 #### Permission Types
