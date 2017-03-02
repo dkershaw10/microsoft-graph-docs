@@ -51,7 +51,7 @@ Allows your app to create groups, read and update group memberships, and delete 
 
 **Delegated**
 
-Admin consent required: No<br/>
+Admin consent required: Yes<br/>
 Permission scope: Group.ReadWrite.All
 
 Allows your app to create groups and read all group properties and memberships on behalf of the signed-in user.  Additionally allows group owners to manage their groups and allows group members to update group content. 

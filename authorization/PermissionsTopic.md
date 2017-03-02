@@ -35,7 +35,7 @@ Allows your app to create groups, read and update group memberships, and delete 
 **Delegated**
 
 Azure AD portal display: Read and write all groups<br/>
-Admin consent required: No
+Admin consent required: Yes
 
 Allows your app to create groups and read all group properties and memberships on behalf of the signed-in user.  Additionally allows group owners to manage their groups and allows group members to update group content. 
 
