@@ -1,5 +1,8 @@
-# Microsoft Graph permissions reference
+# Microsoft Graph permissions reference 
 
+[Calendars.Read](#Calendars_Reaad) [Group.ReadWrite.All](#Group_ReaadWrite_All) [User.Read](#User_Reaad)
+
+<a name="Calendars_Reaad"></a>
 ## Calendars.Read
 
 ### Permission Types
@@ -23,6 +26,7 @@ Allows your app to read events in user calendars.
 * Your app reads users' calendars in an organization and publishes schedules for a meeting room. 
 
 
+<a name="Group_ReaadWrite_All"></a>
 ## Group.ReadWrite.All
 ### Permission Types
 **App-only**
@@ -70,6 +74,7 @@ For more information, see [known issues](../overview/release_notes.md#groups).
 * Your app presents a group-picker that lets a user join a group by choosing from an enumerated list of Office 365 groups that is based on search criteria entered by the user. The app needs to both discover (find) Office 365 groups and update the membership of the chosen group.
 * Your app lets a user create groups. 
 
+<a name="User_Read"></a>
 ## User.Read
 
 ### Permission Types
