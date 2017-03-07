@@ -1,8 +1,8 @@
 # Microsoft Graph permissions reference 
 
-[Calendars.Read](#Calendars_Reaad) [Group.ReadWrite.All](#Group_ReaadWrite_All) [User.Read](#User_Reaad)
+[Calendars.Read](#Calendars_Read) [Group.ReadWrite.All](#Group_ReadWrite_All) [User.Read](#User_Read)
 
-<a name="Calendars_Reaad"></a>
+<a name="Calendars_Read"></a>
 ## Calendars.Read
 
 ### Permission Types
@@ -26,7 +26,7 @@ Allows your app to read events in user calendars.
 * Your app reads users' calendars in an organization and publishes schedules for a meeting room. 
 
 
-<a name="Group_ReaadWrite_All"></a>
+<a name="Group_ReadWrite_All"></a>
 ## Group.ReadWrite.All
 ### Permission Types
 **App-only**
