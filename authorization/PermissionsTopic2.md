@@ -37,7 +37,7 @@ Allows your app to read events in user calendars.
 
 * Your app reads the calendar of the signed-in user and raises an alarm on her mobile device before meetings. 
 
-<a name="Groupr_Permissions"></a>
+<a name="Group_Permissions"></a>
 ## Group Permissions
 <a name="Read_and_write_all_groups"></a>
 ### Read and write all groups
