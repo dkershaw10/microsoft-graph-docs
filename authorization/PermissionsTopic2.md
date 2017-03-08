@@ -15,7 +15,7 @@
 **Application**
 
 Admin consent required: Yes<br/>
-App role: Calendars.Read
+Role: Calendars.Read
 
 Allows the app to read events of all calendars without a signed-in user. 
 
@@ -29,7 +29,7 @@ Allows the app to read events of all calendars without a signed-in user.
 **Delegated**
 
 Admin consent required: No<br/>
-Permission scope: Calendars.Read
+Scope: Calendars.Read
 
 Allows your app to read events in user calendars. 
 
@@ -45,14 +45,14 @@ Allows your app to read events in user calendars.
 **Application**
 
 Admin consent required: Yes<br/>
-App role: Group.ReadWrite.All
+Role: Group.ReadWrite.All
 
 Allows your app to create groups, read and update group memberships, and delete groups without the presence of a signed-in user. 
 
 **Delegated**
 
 Admin consent required: Yes<br/>
-Permission scope: Group.ReadWrite.All
+Scope: Group.ReadWrite.All
 
 Allows your app to create groups and read all group properties and memberships on behalf of the signed-in user.  Additionally allows group owners to manage their groups and allows group members to update group content. 
 
@@ -95,7 +95,7 @@ For more information, see [known issues](../overview/release_notes.md#groups).
 **Delegated**
 
 Admin consent required: No<br/>
-Permission scope: User.Read
+Scope: User.Read
 
 Allows users to sign-in to your app and allows your app to read the (full) profile of the signed-in user. Also allows your app to read the following basic company information of the signed-in user (through the [Organization](../api-reference/v1.0/resources/organization.md) resource): tenant ID, tenant display name, and verified domains. 
 
