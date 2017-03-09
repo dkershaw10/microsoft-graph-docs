@@ -24,9 +24,9 @@
 
 ### Authorization
 
-* To request this permission on the Azure AD Portal, select _Read user calendars_ under Delegated Permissions or _Read calendars in all mailboxes_ under Application Permissions.
 * To requst this permission on the V2 Portal, select _Calendars.Read_ under either Delegated Permissions or Application Permissions.
 * To request this permission when using the V2 endpoint, include the following in your authorization request: `&scope=https%3A%2F%2Fgraph.microsoft.com%2Fcalendars.read%20`
+* To request this permission on the Azure AD Portal, select _Read user calendars_ under Delegated Permissions or _Read calendars in all mailboxes_ under Application Permissions.
 
 ---
 
@@ -71,9 +71,9 @@ For more information, see [known issues](../overview/release_notes.md#groups).
 
 ### Authorization
 
-* To request this permission on the Azure AD Portal, select _Read and write all groups_ under either Delegated Permissions or Application Permissions.
 * To requst this permission on the V2 Portal, select _Groups.ReadWrite.All_ under either Delegated Permissions or Application Permissions.
 * To request this permission when using the V2 endpoint, include the following in your authorization request: `&scope=https%3A%2F%2Fgraph.microsoft.com%2Fgroup.readwrite.all%20`
+* To request this permission on the Azure AD Portal, select _Read and write all groups_ under either Delegated Permissions or Application Permissions.
 
 ---
 
@@ -95,6 +95,6 @@ The full profile includes all of the declared properties of the [User](../api-re
 
 ### Authorization
 
-* To request this permission on the Azure AD Portal, select _Sign-in and read user profile_ under Delegated Permissions.
 * To requst this permission on the V2 Portal, select _User.Read_ under Delegated Permissions.
 * To request this permission when using the V2 endpoint, include the following in your authorization request: `&scope=https%3A%2F%2Fgraph.microsoft.com%2Fuser.read%20`
+* To request this permission on the Azure AD Portal, select _Sign-in and read user profile_ under Delegated Permissions.
