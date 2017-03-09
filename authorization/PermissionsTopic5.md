@@ -6,6 +6,8 @@
 ## Application permissions
 [Calendars.Read](#Calendars_Read) | [Group.ReadWrite.All](#Group_ReadWrite_All)
 
+---
+
 <a name="Calendars_Read"></a>
 ## Calendars.Read
 
@@ -26,6 +28,7 @@
 * To requst this permission on the V2 Portal, select _Calendars.Read_ under either Delegated Permissions or Application Permissions.
 * To request this permission when using the V2 endpoint, include the following in your authorization request: `&scope=https%3A%2F%2Fgraph.microsoft.com%2Fcalendars.read%20`
 
+---
 
 <a name="Group_ReadWrite_All"></a>
 ## Group.ReadWrite.All
@@ -71,6 +74,8 @@ For more information, see [known issues](../overview/release_notes.md#groups).
 * To request this permission on the Azure AD Portal, select _Read and write all groups_ under either Delegated Permissions or Application Permissions.
 * To requst this permission on the V2 Portal, select _Groups.ReadWrite.All_ under either Delegated Permissions or Application Permissions.
 * To request this permission when using the V2 endpoint, include the following in your authorization request: `&scope=https%3A%2F%2Fgraph.microsoft.com%2Fgroup.readwrite.all%20`
+
+---
 
 <a name="User_Read"></a>
 ## User.Read
