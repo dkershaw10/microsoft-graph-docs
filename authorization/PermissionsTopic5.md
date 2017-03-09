@@ -20,7 +20,7 @@
 
 * Your app reads users' calendars in an organization and publishes schedules for a meeting room. 
 
-### Technical Notes
+### Authorization Details
 
 * To request this permission on the Azure AD Portal, select _Read user calendars_ under Delegated Permissions or _Read calendars in all mailboxes_ under Application Permissions.
 * To requst this permission on the V2 Portal, select _Calendars.Read_ under either Delegated Permissions or Application Permissions.
@@ -66,7 +66,7 @@ For more information, see [known issues](../overview/release_notes.md#groups).
 
 * Your service app creates groups. 
 
-### Technical Notes
+### Authorization Details
 
 * To request this permission on the Azure AD Portal, select _Read and write all groups_ under either Delegated Permissions or Application Permissions.
 * To requst this permission on the V2 Portal, select _Groups.ReadWrite.All_ under either Delegated Permissions or Application Permissions.
@@ -88,7 +88,7 @@ The full profile includes all of the declared properties of the [User](../api-re
 * Your app reads files, mail and calendar information for the signed in user. Combine _User.Read_ with  _Files.Read_, _Mail.Read_, _Calendars.Read_  (Enable sign-in and read user profile, Read users' files,  Read user mail,  Read user calendars)
 * Your app reads  the signed-in user's files (my) and files that other users have shared with the signed-in user (me). Combine  _User.Read_ with  _Files.Read_, _Sites.Read.All_ (Enable sign-in and read user profile, Read users' files,  Read items in all site collections )
 
-### Technical Notes
+### Authorization Details
 
 * To request this permission on the Azure AD Portal, select _Sign-in and read user profile_ under Delegated Permissions.
 * To requst this permission on the V2 Portal, select User.Read_ under Delegated Permissions.
