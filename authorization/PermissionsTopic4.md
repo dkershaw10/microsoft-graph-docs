@@ -51,14 +51,14 @@ For more information, see [known issues](../overview/release_notes.md#groups).
 
 
 ### Common Scenarios
-**Application**
-
-* Your service app creates groups. 
-
 **Delegated**
 
 * Your app presents a group-picker that lets a user join a group by choosing from an enumerated list of Office 365 groups that is based on search criteria entered by the user. The app needs to both discover (find) Office 365 groups and update the membership of the chosen group.
 * Your app lets a user create groups. 
+
+**Application**
+
+* Your service app creates groups. 
 
 <a name="User_Read"></a>
 ## User.Read
