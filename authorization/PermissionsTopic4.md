@@ -1,10 +1,10 @@
 # Microsoft Graph permissions reference 
 
 ## Delegated permissions
-[Calendars.Read](#Calendars_Read)  [Group.ReadWrite.All](#Group_ReadWrite_All)  [User.Read](#User_Read)
+[Calendars.Read](#Calendars_Read) | [Group.ReadWrite.All](#Group_ReadWrite_All) | [User.Read](#User_Read)
 
 ## Application permissions
-[Calendars.Read (Read calendars in all mailboxes)](#Calendars_Read) [Group.ReadWrite.All (Read and write all groups)](#Group_ReadWrite_All)
+[Calendars.Read (Read calendars in all mailboxes)](#Calendars_Read) | [Group.ReadWrite.All (Read and write all groups)](#Group_ReadWrite_All)
 
 <a name="Calendars_Read"></a>
 ## Calendars.Read
