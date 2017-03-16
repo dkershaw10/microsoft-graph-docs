@@ -1,11 +1,6 @@
 # Microsoft Graph permissions reference 
 
-## Delegated permissions
-[Calendars.Read](#Calendars_Permissions) | [Calendars.Read.Shared](#Calendars_Permissions) | [Calendars.ReadWrite](#Calendars_Permissions) | [Calendars.ReadWrite.Shared](#Calendars_PLermissions) | [Group.Read.All](#Group_Permissions) | [Group.ReadWrite.All](#Group_Permissions) | [User.Read](#User_Permissions) | [User.ReadWriwe](#User_Permissions) | [User.ReadBasic.All](#User_Permissions) | [User.Read.All](#User_Permissions) | [User.ReadWrite.All](#User_Permissions)
-
-## Application permissions
-[Calendars.Read](#Calendars_Permissions) | [Calendars.ReadWrite](#Calendars_Permissions) | [Group.Read.All](#Group_Permissions) |  [Group.ReadWrite.All](#Group_Permissions) | [User.Read.All](#User_Permissions) | [User.ReadWrite.All](#User_Permissions)
-
+[Calendars Permissions](#Calendars_Permissions) | [Group Permissions](#Group_Permissions) | [User Permissions](#User_Permissions)
 ---
 
 <a name="Calendars_Permissions"></a>
