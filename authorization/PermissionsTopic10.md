@@ -45,7 +45,7 @@ NOTE: How is this differrent from the Group permissions as these give access to 
 * _Calendars.ReadWrite_ : Your app reads the calendars of all users in your organization and has the ability to create, update, or delete events for all users.
 * Scenario 3
 
-For more complex scenarios involving multiple permissions, see <Permission Scenarios Topic>.
+For more complex scenarios involving multiple permissions, see &lt;Permission Scenarios Topic&gt;.
 
 ---
 
@@ -103,7 +103,7 @@ For more information, see [known issues](../overview/release_notes.md#groups).
 * Scenario 2
 * Scenario 3
 
-For more complex scenarios involving multiple permissions, see <Permission Scenarios Topic>.
+For more complex scenarios involving multiple permissions, see \<Permission Scenarios Topic\>.
 
 ---
 
@@ -149,4 +149,4 @@ The full profile includes all of the declared properties of the [User](../api-re
 * Scenario 2
 * Scenario 3
 
-For more complex scenarios involving multiple permissions, see <Permission Scenarios Topic>.
+For more complex scenarios involving multiple permissions, see \<Permission Scenarios Topic\>.
