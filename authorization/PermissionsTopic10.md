@@ -12,6 +12,7 @@
 ## Calendars Permissions
 
 **Delegated Permissions**
+
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
 | _Calendars.Read_ |    Read user calendars  | Allows the app to read events in user calendars.| No |
@@ -20,6 +21,7 @@
 | _Calendars.ReadWrite.Shared_ |    Read and write user and shared calendars | Allows the app to create, read, update and delete events in all calendars the user has permissions to access. This includes delegate and shared calendars.| No |
 
 **Application Permissions**
+
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
 | _Calendars.Read_ |    Read user calendars  | Allows the app to read events in user calendars.| Yes |
@@ -39,12 +41,14 @@
 ## Group Permissions
 
 **Delegated Permissions**
+
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
 | _Group.Read.All_ |    Read all groups | Allows the app to list groups, and to read their properties and all group memberships on behalf of the signed-in user.  Also allows the app to read calendar, conversations, files, and other group content for all groups the signed-in user can access. | Yes |
 | _Group.ReadWrite.All_ |    Read and write all groups| Allows the app to create groups and read all group properties and memberships on behalf of the signed-in user.  Additionally allows group owners to manage their groups and allows group members to update group content. | Yes |
 
 **Application Permissions**
+
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
 | _Group.Read.All_ | Read all groups | Allows the app to read memberships for all groups without a signed-in user. Note that not all group API supports access using app-only permissions. See [known issues](../overview/release_notes.md#groups) for examples. | Yes |
@@ -88,6 +92,7 @@ For more information, see [known issues](../overview/release_notes.md#groups).
 ## User Permissions
 
 **Delegated Permissions**
+
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
 | _User.Read_       |    Sign-in and read user profile | Allows users to sign-in to the app, and allows the app to read the profile of signed-in users. The full profile includes all of the declared properties of the User entity. The app cannot read navigation properties, such as manager or direct reports. Also allows the app to read the following basic company information of the signed-in user (through the **Organization** object): tenant ID, tenant display name, and verified domains.| No |
@@ -97,6 +102,7 @@ For more information, see [known issues](../overview/release_notes.md#groups).
 | _User.ReadWrite.All_           |     Read and write all user's full profiles | Allows the app to read and write the full set of profile properties, reports, and managers of other users in your organization, on behalf of the signed-in user. | Yes |
 
 **Application Permissions**
+
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
 | _User.Read.All_ |    Read all users' full profiles | Allows the app to read the full set of profile properties, group membership, reports and managers of other users in your organization, without a signed-in user.| Yes |
