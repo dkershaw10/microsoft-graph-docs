@@ -27,13 +27,25 @@
 | _Calendars.Read_ |    Read calendars in all mailboxes  | Allows the app to read events of all calendars without a signed-in user.| Yes |
 | _Calendars.ReadWrite_ |    Read and write calendars in all mailboxes | Allows the app to create, read, update, and delete events of all calendars without a signed-in user.| Yes |
 
+### Remarks
+
+NOTE: How is this differrent from the Group permissions as these give access to Group calendars (i assume that the calendars perms don't). Might want to have a scenario demonstrating this too. Scenarios below are just guesses -- the workload teams should supply these.
+
 
 ### Example Scenarios
+**Delegation**
+
+* _Clanendars.Read_ : Your App reads the calendars of the signed-in user.
+* _Calendars.ReadWrite_ : Your app reads the calendars of the signed-in user and creates events for the signed-in user. 
+* _Calendars.ReqdWrite.Shared_ : Your app can read and create delete or update events in all calendars that the signed-in user can access. For organizational accounts this access is dependent upon the security groups and directoryRoles that the signed-in user is a member of. For personal Microsoft accounts the access is limited to the signed-in user. 
+
 **Application**
 
-* Your app reads users' calendars in an organization and publishes schedules for a meeting room. 
-* Scenario 2
+* _Calendars.Read_ : Your app reads the calendars of all users in your organization and publishes schedules for meeting rooms. 
+* _Calendars.ReadWrite_ : Your app reads the calendars of all users in your organization and has the ability to create, update, or delete events for all users.
 * Scenario 3
+
+For more complex scenarios involving multiple permissions, see <Permission Scenarios Topic>.
 
 ---
 
@@ -57,6 +69,8 @@
 
 ### Details
 
+Group functionality is not supported on personal Microsoft accounts. (How would this perm show up on a consent page presented to a personal account?)
+
 Application permissions support is limited to APIs for core group administration and management. 
 
 Examples of group features that support Application permissions: 
@@ -79,12 +93,17 @@ For more information, see [known issues](../overview/release_notes.md#groups).
 ### Example Scenarios
 **Delegated**
 
-* Your app presents a group-picker that lets a user join a group by choosing from an enumerated list of Office 365 groups that is based on search criteria entered by the user. The app needs to both discover (find) Office 365 groups and update the membership of the chosen group.
-* Your app lets a user create groups. 
+* _Group.ReadWrite.All_ : Your app presents a group-picker that lets the signed-in user join a group by choosing from an enumerated list of Office 365 groups that is based on search criteria entered by the user. The app needs to both discover (find) Office 365 groups and update the membership of the chosen group.
+* _Group.ReadWrite.All_ : Your app lets the signed-in user create groups. 
+* scenario 3
 
 **Application**
 
-* Your service app creates groups. 
+* _Group.ReadWrite.All_ : Your service app creates groups. 
+* Scenario 2
+* Scenario 3
+
+For more complex scenarios involving multiple permissions, see <Permission Scenarios Topic>.
 
 ---
 
@@ -109,16 +128,25 @@ For more information, see [known issues](../overview/release_notes.md#groups).
 | _User.ReadWrite.All_ |   Read and write all users' full profiles | Allows the app to read and write the full set of profile properties, group membership, reports and managers of other users in your organization, without a signed-in user.| Yes |
 
 ### Details
-The full profile includes all of the declared properties of the [User](../api-reference/v1.0/resources/user.md) resource. Because the profile might contain sensitive directory information or personally identifiable information (PII), several permissions constrain app access to a limited set of properties known as a basic profile. For users, the basic profile includes only the following properties: 
+
+The full profile includes all of the declared properties of the [User](../api-reference/v1.0/resources/user.md) resource. Because the profile might contain sensitive directory information or personally identifiable information (PII), the _User.ReadBasic.All_ permission constrains app access to a limited set of properties known as a basic profile. For users, the basic profile includes only the following properties: 
 
 - Display name
 - First and last name
 - Photo
 - Email address
 
-
 ### Example Scenarios
 **Delegated**
-* Your app reads the full user profile for the signed in user. This will not include relationships. To see relationships, request _User.ReadBasic.All_ or _User.Read.All_.
-* Your app reads files, mail and calendar information for the signed in user. Combine _User.Read_ with  _Files.Read_, _Mail.Read_, _Calendars.Read_  (Enable sign-in and read user profile, Read users' files,  Read user mail,  Read user calendars)
-* Your app reads  the signed-in user's files and files that other users have shared with the signed-in user. Combine  _User.Read_ with  _Files.Read_, _Sites.Read.All_ (Enable sign-in and read user profile, Read users' files,  Read items in all site collections )
+
+* _User.Read_ : Your app reads the full user profile for the signed in user. This will not include relationships. To see relationships, request _User.ReadBasic.All_ or _User.Read.All_. For organization accounts, basic company information can also be read -- DO YOU HAVE TO READ THE organization RESOURCE FOR THIS?
+* _User.ReadBasic.All_ : Your app can read the basic profile of all users the directory. For LOB or organizations, this allows your app to read relationships like manager and directReports. HOW IS THIS DIFFERENT FOR PERSONAL ACCOUNTS -- i.e WHAT KIND OF RELATIONSHIPS CAN THEY READ?
+* _User.Read_,  _Files.Read_, and _Sites.Read.All_ : Your app reads  the signed-in user's files and files that other users have shared with the signed-in user. NOT SURE WHETHER WE WOULD SHOW SCENRIOS w/ MULTIPLE PERMS LIKE THIS. THEY MIGHT FIT BETTER IN THE PERMISSION SCENARIOS TOPIC.
+
+**Application Permissions**
+
+* Scenario 1
+* Scenario 2
+* Scenario 3
+
+For more complex scenarios involving multiple permissions, see <Permission Scenarios Topic>.
