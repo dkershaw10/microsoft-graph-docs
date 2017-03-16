@@ -24,7 +24,7 @@
 
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
-| _Calendars.Read_ |    Read user calendars  | Allows the app to read events in user calendars.| Yes |
+| _Calendars.Read_ |    Read calendars in all mailboxes  | Allows the app to read events of all calendars without a signed-in user.| Yes |
 | _Calendars.ReadWrite_ |    Read and write calendars in all mailboxes | Allows the app to create, read, update, and delete events of all calendars without a signed-in user.| Yes |
 
 
