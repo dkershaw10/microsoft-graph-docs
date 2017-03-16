@@ -1,6 +1,7 @@
 # Microsoft Graph permissions reference 
 
 [Calendars Permissions](#Calendars_Permissions) | [Group Permissions](#Group_Permissions) | [User Permissions](#User_Permissions)
+
 ---
 
 <a name="Calendars_Permissions"></a>
