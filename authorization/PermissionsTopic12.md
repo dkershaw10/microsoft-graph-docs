@@ -1,6 +1,6 @@
 # Microsoft Graph permissions reference 
 
-[Calendars permissions](#calendars-permissions) | [Group permissions](#group-permissions) | [User permissions](#user-permissions)
+[Calendars permissions](#calendars-permissions) |[Calendars permissions](#calendars-permissions) | [Device permissions](#device-permissions) | [Device Management permissions (preview)](#device-management-permissions-(preview)) |  [Group permissions](#group-permissions) |[User permissions](#user-permissions)
 
 ---
 
@@ -234,7 +234,7 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 | _Group.ReadWrite.All_ | Read and write all groups | Allows the app to create groups, read and update group memberships, and delete groups. All of these operations can be performed by the app without a signed-in user. Note that not all group API supports access using app-only permissions. See [known issues](../overview/release_notes.md#groups) for examples.| Yes |
 
 
-### Remaris
+### Remarks
 
 Group functionality is not supported on personal Microsoft accounts. (How would this perm show up on a consent page presented to a personal account?)
 
