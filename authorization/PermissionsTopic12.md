@@ -1,6 +1,6 @@
 # Microsoft Graph permissions reference 
 
-[Calendars permissions](#calendars-permissions) |[Calendars permissions](#calendars-permissions) | [Device permissions](#device-permissions) | [Device Management permissions (preview)](#device-management-permissions-(preview)) |  [Group permissions](#group-permissions) |[User permissions](#user-permissions)
+[Calendars permissions](#calendars-permissions) | [Calendars permissions](#calendars-permissions) | [Device permissions](#device-permissions) | [Device Management permissions (preview)](#device-management-permissions-(preview)) | [Directory permissions](#directory-permissions) |  [Files permissions](#files-permissions) | [Group permissions](#group-permissions) | [Identity Risk Event permissions (preview)](#identity-risk-event-permissions-(preview)) |  [Mail permissions](#mail-permissions) |  [Notes permissions (preview)](#notes-permissions-(preview)) | [OpenID permissions (preview)](#openid-permissions-(preview)) | [People permissions (preview)](#people-permissions-(preview)) | [Sites permissions (preview)](#sites-permissions-(preview)) | [Tasks permissions (preview)](#tasks-permissions-(preview)) | [User permissions](#user-permissions)
 
 ---
 
@@ -371,8 +371,8 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 
 ---
 
-<a name="openid-permissions"></a>
-## OpenID permissions
+<a name="openid-permissions-(preview)"></a>
+## OpenID permissions (preview)
 
 **Delegated Permissions**
 
