@@ -1,6 +1,6 @@
 # Microsoft Graph permissions reference 
 
-[Calendars permissions](#calendars-permissions) | [Calendars permissions](#calendars-permissions) | [Device permissions](#device-permissions) | [Device Management permissions (preview)](#device-management-permissions-(preview)) | [Directory permissions](#directory-permissions) |  [Files permissions](#files-permissions) | [Group permissions](#group-permissions) | [Identity Risk Event permissions (preview)](#identity-risk-event-permissions-(preview)) |  [Mail permissions](#mail-permissions) |  [Notes permissions (preview)](#notes-permissions-(preview)) | [OpenID permissions (preview)](#openid-permissions-(preview)) | [People permissions (preview)](#people-permissions-(preview)) | [Sites permissions (preview)](#sites-permissions-(preview)) | [Tasks permissions (preview)](#tasks-permissions-(preview)) | [User permissions](#user-permissions)
+[Calendars permissions](#calendars-permissions) | [Contacts permissions](#contacts-permissions) | [Device permissions](#device-permissions) | [Device Management permissions (preview)](#device-management-permissions-(preview)) | [Directory permissions](#directory-permissions) |  [Files permissions](#files-permissions) | [Group permissions](#group-permissions) | [Identity Risk Event permissions (preview)](#identity-risk-event-permissions-(preview)) |  [Mail permissions](#mail-permissions) |  [Notes permissions (preview)](#notes-permissions-(preview)) | [OpenID permissions (preview)](#openid-permissions-(preview)) | [People permissions (preview)](#people-permissions-(preview)) | [Sites permissions (preview)](#sites-permissions-(preview)) | [Tasks permissions (preview)](#tasks-permissions-(preview)) | [User permissions](#user-permissions)
 
 ---
 
@@ -31,7 +31,7 @@ NOTE: How is this differrent from the Group permissions as these give access to 
 ### Example Scenarios
 **Delegated**
 
-* _Clanendars.Read_ : Your App reads the calendars of the signed-in user.
+* _Calendars.Read_ : Your App reads the calendars of the signed-in user.
 * _Calendars.ReadWrite_ : Your app reads the calendars of the signed-in user and creates events for the signed-in user. 
 * _Calendars.ReadWrite.Shared_ : Your app can read and create delete or update events in all calendars that the signed-in user can access. For organizational accounts this access is dependent upon the security groups and directoryRoles that the signed-in user is a member of. For personal Microsoft accounts the access is limited to the signed-in user. 
 
@@ -70,15 +70,15 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 ### Example Scenarios
 **Delegated**
 
-* _Contaxts.Read_ : Your App reads the calendars of the signed-in user.
-* _Contacts.ReadWrite_ : Your app reads the calendars of the signed-in user and creates events for the signed-in user. 
-* _Contats.ReadWrite.Shared_ : Your app can read and create delete or update events in all calendars that the signed-in user can access. For organizational accounts this access is dependent upon the security groups and directoryRoles that the signed-in user is a member of. For personal Microsoft accounts the access is limited to the signed-in user. 
+* _Contacts.Read_ : Your app reads a contact from one of the top-level contact folders of the signed-in user (GET /me/contactfolders/{Id}/contacts/{id}).
+* _Contacts.ReadWrite_ : Your app updates the contact photo of one of the signed-in user's contacts (PATCH /me/contactfolders/{contactFolderId}/contacts/{id}/photo/$value). 
+* _Contacts.ReadWrite_ : Your app adds contacts to the root folder of the signed-in user (POST /me/contacts).
 
 **Application**
 
-* _Contacts.Read_ : Your app reads the calendars of all users in your organization and publishes schedules for meeting rooms. 
-* _Contacts.ReadWrite_ : Your app reads the calendars of all users in your organization and has the ability to create, update, or delete events for all users.
-* Scenario 3
+* _Contacts.Read_ : Your app reads contacts from one of the top-level contact folders of any user in the organization (GET /users/{id | userPrincipalName}/contactfolders/{Id}/contacts/{id}). 
+* _Contacts.ReadWrite_ : Your app can update the photo for any contact of any user in an organization (PATCH /user/{id | userPrincipalName}/contactfolders/{contactFolderId}/contacts/{id}/photo/$value). 
+* _Contacts.ReadWrite_ : Your app can add contacts to the root folder of any user in the organization (POST /users/{id | userPrincipalName}/contacts).
 
 For more complex scenarios involving multiple permissions, see &lt;Permission Scenarios Topic&gt;.
 
