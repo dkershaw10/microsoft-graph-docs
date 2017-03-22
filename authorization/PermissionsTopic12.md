@@ -1,13 +1,13 @@
 # Microsoft Graph permissions reference 
 
-[Calendars permissions](#calendars-permissions) | [Contacts permissions](#contacts-permissions) | [Device permissions](#device-permissions) | [Device Management permissions (preview)](#device-management-permissions-(preview)) | [Directory permissions](#directory-permissions) |  [Files permissions](#files-permissions) | [Group permissions](#group-permissions) | [Identity Risk Event permissions (preview)](#identity-risk-event-permissions-(preview)) |  [Mail permissions](#mail-permissions) |  [Notes permissions (preview)](#notes-permissions-(preview)) | [OpenID permissions (preview)](#openid-permissions-(preview)) | [People permissions (preview)](#people-permissions-(preview)) | [Sites permissions (preview)](#sites-permissions-(preview)) | [Tasks permissions (preview)](#tasks-permissions-(preview)) | [User permissions](#user-permissions)
+[Calendars permissions](#calendars-permissions) | [Contacts permissions](#contacts-permissions) | [Device permissions](#device-permissions) | [Device Management permissions (preview)](#device-management-permissions-(preview)) | [Directory permissions](#directory-permissions) |  [Files permissions](#files-permissions) | [Group permissions](#group-permissions) | [Identity Risk Event permissions (preview)](#identity-risk-event-permissions-(preview)) |  [Mail permissions](#mail-permissions) |  [Member permissions](#member-permissions) |  [Notes permissions (preview)](#notes-permissions-(preview)) | [OpenID permissions (preview)](#openid-permissions-(preview)) | [People permissions (preview)](#people-permissions-(preview)) | [Reports permissions](#reports-permissions) |  [Sites permissions (preview)](#sites-permissions-(preview)) | [Tasks permissions (preview)](#tasks-permissions-(preview)) | [User permissions](#user-permissions)
 
 ---
 
 <a name="calendars-permissions"></a>
 ## Calendars permissions
 
-**Delegated Permissions**
+**Delegated permissions**
 
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
@@ -16,7 +16,7 @@
 | _Calendars.ReadWrite_ |    Have full access to user calendars  | Allows the app to create, read, update, and delete events in user calendars. | No |
 | _Calendars.ReadWrite.Shared_ |    Read and write user and shared calendars | Allows the app to create, read, update and delete events in all calendars the user has permissions to access. This includes delegate and shared calendars.| No |
 
-**Application Permissions**
+**Application permissions**
 
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
@@ -28,7 +28,7 @@
 NOTE: How is this differrent from the Group permissions as these give access to Group calendars (i assume that the calendars perms don't). Might want to have a scenario demonstrating this too. Scenarios below are just guesses -- the workload teams should supply these.
 
 
-### Example Scenarios
+### Example usage
 **Delegated**
 
 * _Calendars.Read_ : Your App reads the calendars of the signed-in user.
@@ -48,7 +48,7 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 <a name="contacts-permissions"></a>
 ## Contacts permissions
 
-**Delegated Permissions**
+**Delegated permissions**
 
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
@@ -57,7 +57,7 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 | _Contacts.ReadWrite_ |    Have full access to user contacts  | Allows the app to create, read, update, and delete user contacts. | No |
 | _Contacts.ReadWrite.Shared_ |    Read and write user and shared contacts | Allows the app to create, read, update and delete contacts that the user has permissions to, including the user's own and shared contacts.| No |
 
-**Application Permissions**
+**Application permissions**
 
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
@@ -67,7 +67,7 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 ### Remarks
 
 
-### Example Scenarios
+### Example usage
 **Delegated**
 
 * _Contacts.Read_ : Your app reads a contact from one of the top-level contact folders of the signed-in user (GET /me/contactfolders/{Id}/contacts/{id}).
@@ -87,11 +87,11 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 <a name="device-permissions"></a>
 ## Device permissions
 
-**Delegated Permissions**
+**Delegated permissions**
 
 None.
 
-**Application Permissions**
+**Application permissions**
 
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
@@ -100,10 +100,7 @@ None.
 ### Remarks
 
 
-### Example Scenarios
-**Delegated**
-
-
+### Example usage
 **Application**
 
 
@@ -114,11 +111,11 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 <a name="device-management-permissions-(preview)"></a>
 ## Device Management permissions (preview)
 
-**Delegated Permissions**
+**Delegated permissions**
 
 None.
 
-**Application Permissions**
+**Application permissions**
 
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
@@ -137,10 +134,7 @@ None.
 ### Remarks
 
 
-### Example Scenarios
-**Delegated**
-
-
+### Example usage
 **Application**
 
 
@@ -151,7 +145,7 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 <a name="directory-permissions"></a>
 ## Directory permissions
 
-**Delegated Permissions**
+**Delegated permissions**
 
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
@@ -159,7 +153,7 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 | _Directory.Read.All_           |     Read directory data                     | Allows the app to read data in your organization's directory, such as users, groups and apps. | Yes |
 | _Directory.ReadWrite.All_      |     Read and write directory data           | Allows the app to read and write data in your organization's directory, such as users, and groups.  Does not allow user or group deletion. It does not allow the app to delete users or groups, or reset user passwords. | Yes |
 
-**Application Permissions**
+**Application permissions**
 
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
@@ -169,7 +163,7 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 ### Remarks
 
 
-### Example Scenarios
+### Example usage
 **Delegated**
 
 
@@ -183,7 +177,7 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 <a name="files-permissions"></a>
 ## Files permissions
 
-**Delegated Permissions**
+**Delegated permissions**
 
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
@@ -195,7 +189,7 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 | _Files.ReadWrite.AppFolder_ | Have full access to the application's folder | Allows the app to read, create, update and delete files in the application's folder. | No |
 | _Files.ReadWrite.Selected_ |    Read and write files that the user selects | Allows the app to read and write files that the user selects. The app has access for several hours after the user selects a file. | No |
 
-**Application Permissions**
+**Application permissions**
 
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
@@ -205,7 +199,7 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 ### Remarks
 
 
-### Example Scenarios
+### Example usage
 **Delegated**
 
 
@@ -219,14 +213,14 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 <a name="group-permissions"></a>
 ## Group permissions
 
-**Delegated Permissions**
+**Delegated permissions**
 
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
 | _Group.Read.All_ |    Read all groups | Allows the app to list groups, and to read their properties and all group memberships on behalf of the signed-in user.  Also allows the app to read calendar, conversations, files, and other group content for all groups the signed-in user can access. | Yes |
 | _Group.ReadWrite.All_ |    Read and write all groups| Allows the app to create groups and read all group properties and memberships on behalf of the signed-in user.  Additionally allows group owners to manage their groups and allows group members to update group content. | Yes |
 
-**Application Permissions**
+**Application permissions**
 
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
@@ -257,7 +251,7 @@ Examples of group features that do not support Application permissions:
 For more information, see [known issues](../overview/release_notes.md#groups).
 
 
-### Example Scenarios
+### Example usage
 **Delegated**
 
 * _Group.ReadWrite.All_ : Your app presents a group-picker that lets the signed-in user join a group by choosing from an enumerated list of Office 365 groups that is based on search criteria entered by the user. The app needs to both discover (find) Office 365 groups and update the membership of the chosen group.
@@ -277,24 +271,21 @@ For more complex scenarios involving multiple permissions, see \<Permission Scen
 <a name="identity-risk-event-permissions-(preview)"></a>
 ## Identity Risk Event permissions (preview)
 
-**Delegated Permissions**
+**Delegated permissions**
 
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
 | _IdentityRiskEvent.Read.All_ |   Read identity risk event information  (preview) | Allows the app to read identity risk event information for all users in your organization on behalf of the signed-in user. | Yes |
 
-**Application Permissions**
+**Application permissions**
 
 None.
 
 ### Remarks
 
 
-### Example Scenarios
+### Example usage
 **Delegated**
-
-
-**Application**
 
 
 For more complex scenarios involving multiple permissions, see &lt;Permission Scenarios Topic&gt;.
@@ -304,7 +295,7 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 <a name="mail-permissions"></a>
 ## Mail permissions
 
-**Delegated Permissions**
+**Delegated permissions**
 
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
@@ -316,7 +307,7 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 | _Mail.Send.Shared_ |    Send mail on behalf of others | Allows the app to send mail as the signed-in user, including sending on-behalf of others. | No |
 | _MailboxSettings.ReadWrite_ |  Read and write user mailbox settings | Allows the app to create, read, update, and delete user's mailbox settings. Does not include permission to send mail.| No |
 
-**Application Permissions**
+**Application permissions**
 
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
@@ -328,9 +319,34 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 ### Remarks
 
 
-### Example Scenarios
+### Example usage
 **Delegation**
 
+
+**Application**
+
+
+For more complex scenarios involving multiple permissions, see &lt;Permission Scenarios Topic&gt;.
+
+---
+
+<a name="member-permissions"></a>
+## Member permissions
+
+**Delegated permissions**
+
+None.
+
+**Application permissions**
+
+|   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
+|:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
+| _Member.Read.Hidden_ | Read all hidden memberships | Allows the app to read the memberships of hidden groups and administrative units without a signed-in user. | Yes |
+
+### Remarks
+
+
+### Example usage
 
 **Application**
 
@@ -342,7 +358,7 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 <a name="notes-permissions-(preview)"></a>
 ## Notes permissions (preview)
 
-**Delegated Permissions**
+**Delegated permissions**
 
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
@@ -353,18 +369,15 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 | _Notes.ReadWrite.All_ |    Read and write notebooks that the user can access (preview) | Allows the app to read and write the contents of all notebooks and sections that the signed-in user can access.  It cannot access password protected sections.| No |
 | _Notes.ReadWrite.CreatedByApp_ |    Limited notebook access (preview) | Allows the app to read the titles of notebooks and sections, create new pages on behalf of the signed-in user. Also allows the app to read and update pages created by the app. | No |
 
-**Application Permissions**
+**Application permissions**
 
 None.
 
 ### Remarks
 
 
-### Example Scenarios
+### Example usage
 **Delegated**
-
-
-**Application**
 
 
 For more complex scenarios involving multiple permissions, see &lt;Permission Scenarios Topic&gt;.
@@ -374,25 +387,22 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 <a name="openid-permissions-(preview)"></a>
 ## OpenID permissions (preview)
 
-**Delegated Permissions**
+**Delegated permissions**
 
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
 | _offline_access_ |    Access user's data anytime (preview) | Allows the app to read and update user data, even when they are not currently using the app.| No |
 | _openid_ |    Sign users in (preview) | Allows users to sign in to the app with their work or school accounts and allows the app to see basic user profile information.| No |
 
-**Application Permissions**
+**Application permissions**
 
 None.
 
 ### Remarks
 
 
-### Example Scenarios
+### Example usage
 **Delegated**
-
-
-**Application**
 
 
 For more complex scenarios involving multiple permissions, see &lt;Permission Scenarios Topic&gt;.
@@ -402,22 +412,44 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 <a name="people-permissions"></a>
 ## People permissions (preview)
 
-**Delegated Permissions**
+**Delegated permissions**
 
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
 | _People.Read_ |    Read users' relevant people lists (preview) | Allows the app to read a ranked list of relevant people of the signed-in user. The list includes local contacts, contacts from social networking, your organization's directory, and people from recent communications (such as email and Skype).| No |
 
-**Application Permissions**
+**Application permissions**
 
 None.
 
 ### Remarks
 
 
-### Example Scenarios
+### Example usage
 **Delegated**
 
+
+For more complex scenarios involving multiple permissions, see &lt;Permission Scenarios Topic&gt;.
+
+---
+
+<a name="reports-permissions"></a>
+## Reports permissions
+
+**Delegated permissions**
+
+None.
+
+**Application permissions**
+
+|   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
+|:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
+| _Reports.Read.All_ | Read all usage reports | Allows an app to read all service usage reports without a signed-in user. Services that provide usage reports include Office 365 and Azure Active Directory. | Yes |
+
+### Remarks
+
+
+### Example usage
 
 **Application**
 
@@ -429,25 +461,22 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 <a name="sites-permissions-(preview)"></a>
 ## Sites permissions (preview)
 
-**Delegated Permissions**
+**Delegated permissions**
 
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
 | _Sites.Read.All_ |    Read items in all site collections | Allows the application to read documents and list  items in all site collections on behalf of the signed-in user. | No |
 | _Sites.ReadWrite.All_ |    Read and write items in all site collections | Allows the application to edit or delete documents and list items in all site collections on behalf of the signed-in user. | No |
 
-**Application Permissions**
+**Application permissions**
 
 None.
 
 ### Remarks
 
 
-### Example Scenarios
+### Example usage
 **Delegated**
-
-
-**Application**
 
 
 For more complex scenarios involving multiple permissions, see &lt;Permission Scenarios Topic&gt;.
@@ -457,7 +486,7 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 <a name="tasks-permissions"></a>
 ## Tasks permissions (preview)
 
-**Delegated Permissions**
+**Delegated permissions**
 
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
@@ -466,18 +495,15 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 | _Tasks.ReadWrite_ |    Create, read, update and delete user tasks and plans (preview) | Allows the app to create, read, update and delete tasks and plans (and tasks in them), that are assigned to or shared with the signed-in user.| No |
 | _Tasks.ReadWrite.Shared_ | Read and write user and shared tasks | Allows the app to create, read, update, and delete tasks a user has permissions to, including their own and shared tasks. | No |
 
-**Application Permissions**
+**Application permissions**
 
 None.
 
 ### Remarks
 
 
-### Example Scenarios
+### Example usage
 **Delegated**
-
-
-**Application**
 
 
 For more complex scenarios involving multiple permissions, see &lt;Permission Scenarios Topic&gt;.
@@ -485,9 +511,9 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 ---
 
 <a name="user-permissions"></a>
-## User Permissions
+## User permissions
 
-**Delegated Permissions**
+**Delegated permissions**
 
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
@@ -497,7 +523,7 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 | _User.Read.All_                |     Read all user's full profiles           | Same as User.ReadBasic.All, except that it allows the app to read the full profile of all users in the organization and when reading navigation properties like manager and direct reports. The full profile includes all of the declared properties of the **User** entity. To read the groups that a user is a member of, the app will also require either Group.Read.All or Group.ReadWrite.All. | Yes |
 | _User.ReadWrite.All_           |     Read and write all user's full profiles | Allows the app to read and write the full set of profile properties, reports, and managers of other users in your organization, on behalf of the signed-in user. | Yes |
 
-**Application Permissions**
+**Application permissions**
 
 |   Permission    |  Azure Portal String   |  Description | Admin Consent Required |
 |:-----------------------------|:-----------------------------------------|:-----------------|:-----------------|
@@ -513,14 +539,14 @@ The full profile includes all of the declared properties of the [User](../api-re
 - Photo
 - Email address
 
-### Example Scenarios
+### Example usage
 **Delegated**
 
 * _User.Read_ : Your app reads the full user profile for the signed in user. This will not include relationships. To see relationships, request _User.ReadBasic.All_ or _User.Read.All_. For organization accounts, basic company information can also be read -- DO YOU HAVE TO READ THE organization RESOURCE FOR THIS?
 * _User.ReadBasic.All_ : Your app can read the basic profile of all users the directory. For LOB or organizations, this allows your app to read relationships like manager and directReports. HOW IS THIS DIFFERENT FOR PERSONAL ACCOUNTS -- i.e WHAT KIND OF RELATIONSHIPS CAN THEY READ?
 * _User.Read_,  _Files.Read_, and _Sites.Read.All_ : Your app reads  the signed-in user's files and files that other users have shared with the signed-in user. NOT SURE WHETHER WE WOULD SHOW SCENRIOS w/ MULTIPLE PERMS LIKE THIS. THEY MIGHT FIT BETTER IN THE PERMISSION SCENARIOS TOPIC.
 
-**Application Permissions**
+**Application permissions**
 
 * Scenario 1
 * Scenario 2
