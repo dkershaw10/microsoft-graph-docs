@@ -31,14 +31,14 @@ NOTE: How is this differrent from the Group permissions as these give access to 
 ### Example usage
 **Delegated**
 
-* _Calendars.Read_ : Your App reads the calendars of the signed-in user.
-* _Calendars.ReadWrite_ : Your app reads the calendars of the signed-in user and creates events for the signed-in user. 
-* _Calendars.ReadWrite.Shared_ : Your app can read and create delete or update events in all calendars that the signed-in user can access. For organizational accounts this access is dependent upon the security groups and directoryRoles that the signed-in user is a member of. For personal Microsoft accounts the access is limited to the signed-in user. 
+* _Calendars.Read_ : Read the calendars of the signed-in user.
+* _Calendars.ReadWrite_ : Read the calendars of the signed-in user and create events for the signed-in user. 
+* _Calendars.ReadWrite.Shared_ : Can read and create delete or update events in all calendars that the signed-in user can access. For organizational accounts this access is dependent upon the security groups and directoryRoles that the signed-in user is a member of. For personal Microsoft accounts the access is limited to the signed-in user. 
 
 **Application**
 
-* _Calendars.Read_ : Your app reads the calendars of all users in your organization and publishes schedules for meeting rooms. 
-* _Calendars.ReadWrite_ : Your app reads the calendars of all users in your organization and has the ability to create, update, or delete events for all users.
+* _Calendars.Read_ : Read the calendars of all users in your organization and publish schedules for meeting rooms. 
+* _Calendars.ReadWrite_ : Read the calendars of all users in your organization and can create, update, or delete events for all users.
 * Scenario 3
 
 For more complex scenarios involving multiple permissions, see &lt;Permission Scenarios Topic&gt;.
@@ -70,15 +70,15 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 ### Example usage
 **Delegated**
 
-* _Contacts.Read_ : Your app reads a contact from one of the top-level contact folders of the signed-in user (GET /me/contactfolders/{Id}/contacts/{id}).
-* _Contacts.ReadWrite_ : Your app updates the contact photo of one of the signed-in user's contacts (PATCH /me/contactfolders/{contactFolderId}/contacts/{id}/photo/$value). 
-* _Contacts.ReadWrite_ : Your app adds contacts to the root folder of the signed-in user (POST /me/contacts).
+* _Contacts.Read_ : Read a contact from one of the top-level contact folders of the signed-in user (GET /me/contactfolders/{Id}/contacts/{id}).
+* _Contacts.ReadWrite_ : Update the contact photo of one of the signed-in user's contacts (PATCH /me/contactfolders/{contactFolderId}/contacts/{id}/photo/$value). 
+* _Contacts.ReadWrite_ : Add contacts to the root folder of the signed-in user (POST /me/contacts).
 
 **Application**
 
-* _Contacts.Read_ : Your app reads contacts from one of the top-level contact folders of any user in the organization (GET /users/{id | userPrincipalName}/contactfolders/{Id}/contacts/{id}). 
-* _Contacts.ReadWrite_ : Your app can update the photo for any contact of any user in an organization (PATCH /user/{id | userPrincipalName}/contactfolders/{contactFolderId}/contacts/{id}/photo/$value). 
-* _Contacts.ReadWrite_ : Your app can add contacts to the root folder of any user in the organization (POST /users/{id | userPrincipalName}/contacts).
+* _Contacts.Read_ : Read contacts from one of the top-level contact folders of any user in the organization (GET /users/{id | userPrincipalName}/contactfolders/{Id}/contacts/{id}). 
+* _Contacts.ReadWrite_ : Update the photo for any contact of any user in an organization (PATCH /user/{id | userPrincipalName}/contactfolders/{contactFolderId}/contacts/{id}/photo/$value). 
+* _Contacts.ReadWrite_ : Add contacts to the root folder of any user in the organization (POST /users/{id | userPrincipalName}/contacts).
 
 For more complex scenarios involving multiple permissions, see &lt;Permission Scenarios Topic&gt;.
 
@@ -254,8 +254,8 @@ For more information, see [known issues](../overview/release_notes.md#groups).
 ### Example usage
 **Delegated**
 
-* _Group.ReadWrite.All_ : Your app presents a group-picker that lets the signed-in user join a group by choosing from an enumerated list of Office 365 groups that is based on search criteria entered by the user. The app needs to both discover (find) Office 365 groups and update the membership of the chosen group.
-* _Group.ReadWrite.All_ : Your app lets the signed-in user create groups. 
+* _Group.ReadWrite.All_ : Present a group-picker that lets the signed-in user join a group by choosing from an enumerated list of Office 365 groups that is based on search criteria entered by the user. The app needs to both discover (find) Office 365 groups and update the membership of the chosen group.
+* _Group.ReadWrite.All_ : Let the signed-in user create groups. 
 * scenario 3
 
 **Application**
@@ -535,16 +535,21 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 The full profile includes all of the declared properties of the [User](../api-reference/v1.0/resources/user.md) resource. Because the profile might contain sensitive directory information or personally identifiable information (PII), the _User.ReadBasic.All_ permission constrains app access to a limited set of properties known as a basic profile. For users, the basic profile includes only the following properties: 
 
 - Display name
-- First and last name
+- Given name and surname
 - Photo
 - Email address
+- User principal name
+
+WHAT ELSE SHOULD GO IN REMARKS? DO WE NEED TO SAY ANYTHING ABOUT PERMS THAT ARE VALID FOR CONSUMER ACCOUNTS? 
+
+FOR USAGE, PLEASE CONCENTRATE ON SPECIFIC CASES LIKE WE DO FOR "Contact permissions" (UNLESS YOU THINK IT"S BETTER TO BE MORE GENERAL), REMEMBER THAT WE HAVE THE SCENARIOS TABLE THAT WILL CONTAIN MORE COMPLEX PERMISSION GROUPINGS, BEST NOT TO REPEAT THINGS THAT ARE CALLED OUT IN DESCRIPTIONS -- UNLESS WE REALLY, REALLY WANT TO EMPHASIZE THEM. TREAT THE USAGE SECTION AS A BLANK SLATE -- IGNORE MY GUESSES! WHERE POSSIBLE ADD DIFFERENCES IN EXPERIENCE BTWN CONSUMER AND ORGANIZATIONAL IDENTITIES.
 
 ### Example usage
 **Delegated**
 
-* _User.Read_ : Your app reads the full user profile for the signed in user. This will not include relationships. To see relationships, request _User.ReadBasic.All_ or _User.Read.All_. For organization accounts, basic company information can also be read -- DO YOU HAVE TO READ THE organization RESOURCE FOR THIS?
-* _User.ReadBasic.All_ : Your app can read the basic profile of all users the directory. For LOB or organizations, this allows your app to read relationships like manager and directReports. HOW IS THIS DIFFERENT FOR PERSONAL ACCOUNTS -- i.e WHAT KIND OF RELATIONSHIPS CAN THEY READ?
-* _User.Read_,  _Files.Read_, and _Sites.Read.All_ : Your app reads  the signed-in user's files and files that other users have shared with the signed-in user. NOT SURE WHETHER WE WOULD SHOW SCENRIOS w/ MULTIPLE PERMS LIKE THIS. THEY MIGHT FIT BETTER IN THE PERMISSION SCENARIOS TOPIC.
+* _User.Read_ : Read the full user profile for the signed in user. This will not include relationships. To see relationships, request _User.ReadBasic.All_ or _User.Read.All_. For organization accounts, basic company information can also be read -- DO YOU HAVE TO READ THE organization RESOURCE FOR THIS?
+* _User.ReadBasic.All_ : Read the basic profile of all users the directory. For LOB or organizations, this allows your app to read relationships like manager and directReports. HOW IS THIS DIFFERENT FOR PERSONAL ACCOUNTS -- i.e WHAT KIND OF RELATIONSHIPS CAN THEY READ?
+* _User.Read_,  _Files.Read_, and _Sites.Read.All_ : Read the signed-in user's files and files that other users have shared with the signed-in user. NOT SURE WHETHER WE WOULD SHOW SCENRIOS w/ MULTIPLE PERMS LIKE THIS. THEY MIGHT FIT BETTER IN THE PERMISSION SCENARIOS TOPIC.
 
 **Application permissions**
 
