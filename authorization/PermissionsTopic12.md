@@ -70,15 +70,15 @@ For more complex scenarios involving multiple permissions, see &lt;Permission Sc
 ### Example usage
 **Delegated**
 
-* _Contacts.Read_ : Read a contact from one of the top-level contact folders of the signed-in user (GET /me/contactfolders/{Id}/contacts/{id}).
-* _Contacts.ReadWrite_ : Update the contact photo of one of the signed-in user's contacts (PATCH /me/contactfolders/{contactFolderId}/contacts/{id}/photo/$value). 
-* _Contacts.ReadWrite_ : Add contacts to the root folder of the signed-in user (POST /me/contacts).
+* _Contacts.Read_ : Read a contact from one of the top-level contact folders of the signed-in user (`GET /me/contactfolders/{Id}/contacts/{id}`).
+* _Contacts.ReadWrite_ : Update the contact photo of one of the signed-in user's contacts (`PUT /me/contactfolders/{contactFolderId}/contacts/{id}/photo/$value`). 
+* _Contacts.ReadWrite_ : Add contacts to the root folder of the signed-in user (`POST /me/contacts`).
 
 **Application**
 
-* _Contacts.Read_ : Read contacts from one of the top-level contact folders of any user in the organization (GET /users/{id | userPrincipalName}/contactfolders/{Id}/contacts/{id}). 
-* _Contacts.ReadWrite_ : Update the photo for any contact of any user in an organization (PATCH /user/{id | userPrincipalName}/contactfolders/{contactFolderId}/contacts/{id}/photo/$value). 
-* _Contacts.ReadWrite_ : Add contacts to the root folder of any user in the organization (POST /users/{id | userPrincipalName}/contacts).
+* _Contacts.Read_ : Read contacts from one of the top-level contact folders of any user in the organization (`GET /users/{id | userPrincipalName}/contactfolders/{Id}/contacts/{id}`). 
+* _Contacts.ReadWrite_ : Update the photo for any contact of any user in an organization (`PUT /user/{id | userPrincipalName}/contactfolders/{contactFolderId}/contacts/{id}/photo/$value`). 
+* _Contacts.ReadWrite_ : Add contacts to the root folder of any user in the organization (`POST /users/{id | userPrincipalName}/contacts`).
 
 For more complex scenarios involving multiple permissions, see &lt;Permission Scenarios Topic&gt;.
 
