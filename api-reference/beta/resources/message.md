@@ -2,6 +2,8 @@
 
 A message in a mailbox folder.
 
+This resource lets you add your own data to custom properties using [extensions](../../../concepts/extensibility_overview.md).
+
 ## Delta query support
 
 This resource supports [delta query](../../../concepts/delta_query_overview.md) to track incremental additions, deletions, and updates, 
@@ -115,7 +117,7 @@ When a message is being composed, in most cases, the From and Sender properties 
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
 |attachments|[Attachment](attachment.md) collection|The [fileAttachment](fileattachment.md) and [itemAttachment](itemattachment.md) attachments for the message.|
-|extensions|[Extension](extension.md) collection| Read-only. Nullable.|
+|extensions|[Extension](extension.md) collection| The collection of open extensions defined for the message. Nullable.|
 |mentions|[mention](mention.md) collection | A collection of mentions in the message, ordered by the **createdDateTime** from the newest to the oldest. By default, a `GET` /messages does not return this property unless you apply `$expand` on the property.|
 |multiValueExtendedProperties|[multiValueLegacyExtendedProperty](multivaluelegacyextendedproperty.md) collection| The collection of multi-value extended properties defined for the message. Read-only. Nullable.|
 |singleValueExtendedProperties|[singleValueLegacyExtendedProperty](singlevaluelegacyextendedproperty.md) collection| The collection of single-value extended properties defined for the message. Read-only. Nullable.|
@@ -125,7 +127,7 @@ When a message is being composed, in most cases, the From and Sender properties 
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[List messages](../api/user_list_messages.md) |[message](message.md) collection | Get all the messages in the signed-in user's mailbox (excluding the Deleted Items and Clutter folders). |
+|[List messages](../api/user_list_messages.md) |[message](message.md) collection | Get all the messages in the signed-in user's mailbox (including the Deleted Items and Clutter folders). |
 |[Create message](../api/user_post_messages.md) | [message](message.md) | Create a draft of a new message. |
 |[Get message](../api/message_get.md) | [message](message.md) |Read properties and relationships of message object.|
 |[Update](../api/message_update.md) | [message](message.md)	|Update message object. |
@@ -144,9 +146,11 @@ When a message is being composed, in most cases, the From and Sender properties 
 |**Attachments**| | |
 |[List attachments](../api/message_list_attachments.md) |[Attachment](attachment.md) collection| Get all attachments on a message.|
 |[Add attachment](../api/message_post_attachments.md) |[Attachment](attachment.md)| Add a new attachment to a message by posting to the attachments collection.|
-|**Data extensions**| | |
-|[Create data extension](../api/opentypeextension_post_opentypeextension.md) |[openTypeExtension](opentypeextension.md)| Create an open type data extension and add custom properties in a new or existing instance of a resource.|
-|[Get data extension](../api/opentypeextension_get.md) |[openTypeExtension](opentypeextension.md) collection| Get an **openTypeExtension** object or objects identified by name or fully qualified name.|
+|**Open extensions**| | |
+|[Create open extension](../api/opentypeextension_post_opentypeextension.md) |[openTypeExtension](opentypeextension.md)| Create an open extension and add custom properties to a new or existing resource.|
+|[Get open extension](../api/opentypeextension_get.md) |[openTypeExtension](opentypeextension.md) collection| Get an open extension identified by the extension name.|
+|**Schema extensions**| | |
+|[Add schema extension values](../../../concepts/extensibility_schema_groups.md) || Create a schema extension definition and then use it to add custom typed data to a resource.|
 |**Extended properties**| | |
 |[Create single-value extended property](../api/singlevaluelegacyextendedproperty_post_singlevalueextendedproperties.md) |[message](message.md)  |Create one or more single-value extended properties in a new or existing message.   |
 |[Get message with single-value extended property](../api/singlevaluelegacyextendedproperty_get.md)  | [message](message.md) | Get messages that contain a single-value extended property by using `$expand` or `$filter`. |
@@ -158,6 +162,9 @@ When a message is being composed, in most cases, the From and Sender properties 
 
 - [Get mailbox settings](../api/user_get_mailboxsettings.md) 
 - [Update mailbox settings](../api/user_update_mailboxsettings.md)
+- [Add custom data to resources using extensions](../../../concepts/extensibility_overview.md)
+- [Add custom data to users using open extensions (preview)](../../../concepts/extensibility_open_users.md)
+- [Add custom data to groups using schema extensions (preview)](../../../concepts/extensibility_schema_groups.md)
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

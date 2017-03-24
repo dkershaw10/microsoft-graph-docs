@@ -20,7 +20,7 @@ GET /deviceAppManagement/mobileApps/{mobileAppId}/groupAssignments/{mobileAppGro
 ```
 
 ## Optional query parameters
-This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+This method supports the [OData Query Parameters](http://developer.microsoft.com/en-us/graph/docs/overview/query_parameters) to help customize the response.
 ## Request headers
 |Header|Value|
 |---|---|
@@ -45,7 +45,7 @@ Here is an example of the response. Note: The response object shown here may be 
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 1625
+Content-Length: 1592
 
 {
   "value": {
@@ -92,8 +92,7 @@ Content-Length: 1625
       "v4_4": true,
       "v5_0": true,
       "v5_1": true
-    },
-    "manifest": "bWFuaWZlc3Q="
+    }
   }
 }
 ```

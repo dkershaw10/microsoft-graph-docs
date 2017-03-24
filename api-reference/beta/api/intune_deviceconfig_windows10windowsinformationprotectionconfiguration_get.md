@@ -19,7 +19,7 @@ GET /deviceManagement/deviceConfigurations/{deviceConfigurationId}/groupAssignme
 ```
 
 ## Optional query parameters
-This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+This method supports the [OData Query Parameters](http://developer.microsoft.com/en-us/graph/docs/overview/query_parameters) to help customize the response.
 ## Request headers
 |Header|Value|
 |---|---|
@@ -44,7 +44,7 @@ Here is an example of the response. Note: The response object shown here may be 
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 1671
+Content-Length: 2035
 
 {
   "value": {
@@ -61,7 +61,9 @@ Content-Length: 1671
         "title": "Title value",
         "mode": "exempt",
         "template": {
-          "@odata.type": "microsoft.graph.windowsInformationProtectionAppRuleTemplate"
+          "@odata.type": "microsoft.graph.windowsInformationProtectionAppRuleStoreAppTemplate",
+          "publisher": "Publisher value",
+          "productName": "Product Name value"
         }
       }
     ],
@@ -74,7 +76,14 @@ Content-Length: 1671
         "@odata.type": "microsoft.graph.windowsInformationProtectionCorporateNetworkLocation",
         "name": "Name value",
         "protectedLocation": {
-          "@odata.type": "microsoft.graph.windowsInformationProtectionProtectedLocation"
+          "@odata.type": "microsoft.graph.windowsInformationProtectionProtectedLocationEnterpriseCloudResources",
+          "values": [
+            {
+              "@odata.type": "microsoft.graph.enterpriseCloudResource",
+              "address": "Address value",
+              "proxyServerUri": "Proxy Server Uri value"
+            }
+          ]
         }
       }
     ],

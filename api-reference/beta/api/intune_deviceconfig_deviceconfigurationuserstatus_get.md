@@ -15,14 +15,16 @@ One of the following **scopes** is required to execute this API:
 ```http
 GET /deviceManagement/deviceConfigurations/{deviceConfigurationId}/userStatuses/{deviceConfigurationUserStatusId}
 GET /deviceManagement/deviceConfigurations/{deviceConfigurationId}/rootCertificate//userStatuses/{deviceConfigurationUserStatusId}
+GET /deviceManagement/deviceConfigurations/{deviceConfigurationId}/identityCertificate//userStatuses/{deviceConfigurationUserStatusId}
+GET /deviceManagement/deviceConfigurations/{deviceConfigurationId}/identityCertificate//rootCertificate//userStatuses/{deviceConfigurationUserStatusId}
 GET /deviceManagement/deviceConfigurations/{deviceConfigurationId}/microsoft.graph.iosScepCertificateProfile/rootCertificate//userStatuses/{deviceConfigurationUserStatusId}
 GET /deviceManagement/deviceConfigurations/{deviceConfigurationId}/microsoft.graph.macOSScepCertificateProfile/rootCertificate//userStatuses/{deviceConfigurationUserStatusId}
-GET /deviceManagement/deviceConfigurations/{deviceConfigurationId}/microsoft.graph.windows10VpnConfiguration/identityCertificate//userStatuses/{deviceConfigurationUserStatusId}
+GET /deviceManagement/deviceConfigurations/{deviceConfigurationId}/microsoft.graph.windows81SCEPCertificateProfile/rootCertificate//userStatuses/{deviceConfigurationUserStatusId}
 GET /deviceManagement/deviceConfigurations/{deviceConfigurationId}/microsoft.graph.windowsPhone81VpnConfiguration/identityCertificate//userStatuses/{deviceConfigurationUserStatusId}
 ```
 
 ## Optional query parameters
-This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+This method supports the [OData Query Parameters](http://developer.microsoft.com/en-us/graph/docs/overview/query_parameters) to help customize the response.
 ## Request headers
 |Header|Value|
 |---|---|

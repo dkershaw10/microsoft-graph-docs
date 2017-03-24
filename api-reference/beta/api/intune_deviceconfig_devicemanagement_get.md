@@ -17,7 +17,7 @@ GET /deviceManagement
 ```
 
 ## Optional query parameters
-This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+This method supports the [OData Query Parameters](http://developer.microsoft.com/en-us/graph/docs/overview/query_parameters) to help customize the response.
 ## Request headers
 |Header|Value|
 |---|---|
@@ -42,7 +42,7 @@ Here is an example of the response. Note: The response object shown here may be 
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 366
+Content-Length: 313
 
 {
   "value": {
@@ -50,8 +50,8 @@ Content-Length: 366
     "id": "0b283420-3420-0b28-2034-280b2034280b",
     "settings": {
       "@odata.type": "microsoft.graph.deviceManagementSettings",
-      "windowsCommercialId": "Windows Commercial Id value",
-      "windowsCommercialIdLastModifiedTime": "2016-12-31T23:59:46.9744002-08:00"
+      "deviceComplianceCheckinThresholdDays": 4,
+      "isScheduledActionEnabled": true
     }
   }
 }
