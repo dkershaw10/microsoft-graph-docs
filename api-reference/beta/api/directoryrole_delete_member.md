@@ -1,28 +1,28 @@
-# Remove a scopedRoleMember
+# Remove directory role member
 
-Remove a scoped-role member from an adminstrative unit.
+Use this API to create a new directory role member.
 
 ## Prerequisites
 
-The following **scopes** are required to execute this API: *Directory.AccessAsUser.All*
+The following **scope** is required to execute this API: *Directory.AccessAsUser.All*
 
 ## HTTP request
 
 <!-- { "blockType": "ignored" } -->
 
 ```http
-DELETE /administrativeUnits/{id}/scopedRoleMembers/{id}
+DELETE /directoryRoles/{id}/members/{id}/$ref
 ```
 
 ## Request headers
 
-| Name       | Description|
-|:---------------|:----------|
-| Authorization  | Bearer &lt;token>&gt;. Required.|
+| Name       | Type | Description|
+|:---------------|:--------|:----------|
+| Authorization  | string  | Bearer &lt;token&rt;. Required. |
 
 ## Request body
 
-Do not supply a request body for this method.
+In the request body, supply a JSON representation of [directoryObject](../resources/directoryobject.md) object.
 
 ## Response
 
@@ -35,12 +35,14 @@ If successful, this method returns `204, No Content` response code. It does not 
 Here is an example of the request.
 <!-- {
   "blockType": "request",
-  "name": "delete_scopedrolemember"
+  "name": "delete_directoryobject_from_directoryrole"
 }-->
 
 ```http
-DELETE https://graph.microsoft.com/beta/administrativeUnits/{id}/scopedRoleMembers/{id}
+DELETE https://graph.microsoft.com/beta/directoryRoles/{id}/members/{id}/$ref
 ```
+
+In the request body, supply a JSON representation of [directoryObject](../resources/directoryobject.md) object.
 
 ##### Response
 
@@ -58,7 +60,7 @@ HTTP/1.1 204 No Content
 2015-10-25 14:57:30 UTC -->
 <!-- {
   "type": "#page.annotation",
-  "description": "Delete administrativeUnit",
+  "description": "Create member",
   "keywords": "",
   "section": "documentation",
   "tocPath": ""

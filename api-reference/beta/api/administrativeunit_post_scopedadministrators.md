@@ -1,36 +1,46 @@
-# Create scopedRoleMembership
+# Add a scopedRoleMember
 
-Use this API to create a new [scopedRoleMembership](../resources/scopedrolemembership.md). NOTE: Only the *User account administrator* and *Helpdesk administrator* roles are supported for scoped-role memberships.
+Add a new [scopedRoleMembership](../resources/scopedrolemembership.md). NOTE: Only the *User account administrator* and *Helpdesk administrator* roles are currently supported for scoped-role memberships.
 
 ## Prerequisites
+
 The following **scopes** are required to execute this API: *Directory.AccessAsUser.All*
 
 ## HTTP request
+
 <!-- { "blockType": "ignored" } -->
+
 ```http
-POST /administrativeUnits/{id}/scopedAdministrators
+POST /administrativeUnits/{id}/scopedRoleMembers
 ```
+
 ## Request headers
+
 | Name      |Description|
 |:----------|:----------|
-| Authorization  | Bearer <token>. Required.|
+| Authorization  | Bearer &lt;token&gt;. Required.|
 
 ## Request body
+
 In the request body, supply a JSON representation of [scopedRoleMembership](../resources/scopedrolemembership.md) object.
 
 
 ## Response
+
 If successful, this method returns `201, Created` response code and [scopedRoleMembership](../resources/scopedrolemembership.md) object in the response body.
 
 ## Example
+
 ##### Request
+
 Here is an example of the request.
 <!-- {
   "blockType": "request",
   "name": "create_scopedrolemembership_from_administrativeunit"
 }-->
+
 ```http
-POST https://graph.microsoft.com/beta/administrativeUnits/{id}/scopedAdministrators
+POST https://graph.microsoft.com/beta/administrativeUnits/{id}/scopedRoleMembers
 Content-type: application/json
 Content-length: 272
 
@@ -41,14 +51,18 @@ Content-length: 272
   }
 }
 ```
+
 In the request body, supply a JSON representation of [scopedRoleMembership](../resources/scopedrolemembership.md) object.
+
 ##### Response
+
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
   "truncated": true,
   "@odata.type": "microsoft.graph.scopedrolemembership"
 } -->
+
 ```http
 HTTP/1.1 201 Created
 Content-type: application/json

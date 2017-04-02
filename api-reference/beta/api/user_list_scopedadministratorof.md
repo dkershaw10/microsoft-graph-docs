@@ -1,39 +1,52 @@
-# List scopedAdministratorOf
+# List scopedRoleMemberOf
 
-Retrieve a list of [scopedRoleMembership](../resources/scopedrolemembership.md) for the user.
+Retrieve a list of [scopedRoleMembership](../resources/scopedrolemembership.md) (of adminstrative units) for the user.
+
 ## Prerequisites
+
 The following **scopes** are required to execute this API: *Directory.Read.All* or *Directory.ReadWrite.All* or *Directory.AccessAsUser.All*
 
 ## HTTP request
 <!-- { "blockType": "ignored" } -->
-```http
-GET /me/scopedAdministratorOf
-GET /users/{id}/scopedAdministratorOf
 
+```http
+GET /me/scopedRoleMemberOf
+GET /users/{id | userPrincipalName}/scopedRoleMemberOf
 ```
+
 ## Optional query parameters
+
 This method supports the [OData Query Parameters](http://developer.microsoft.com/en-us/graph/docs/overview/query_parameters) to help customize the response.
 
 ## Request headers
 | Header       | Value |
 |:---------------|:--------|
-| Authorization  | Bearer <token>. Required.  |
+| Authorization  | Bearer &lt;token&rt;. Required.  |
 
 ## Request body
+
 Do not supply a request body for this method.
+
 ## Response
+
 If successful, this method returns a `200 OK` response code and collection of [scopedRoleMembership](../resources/scopedrolemembership.md) objects in the response body.
+
 ## Example
+
 ##### Request
+
 Here is an example of the request.
 <!-- {
   "blockType": "request",
-  "name": "get_scopedadministratorof"
+  "name": "get_scopedrolememberof"
 }-->
+
 ```http
-GET https://graph.microsoft.com/beta/me/scopedAdministratorOf
+GET https://graph.microsoft.com/beta/me/scopedRoleMemberOf
 ```
+
 ##### Response
+
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
@@ -41,6 +54,7 @@ Here is an example of the response. Note: The response object shown here may be 
   "@odata.type": "microsoft.graph.scopedrolemembership",
   "isCollection": true
 } -->
+
 ```http
 HTTP/1.1 200 OK
 Content-type: application/json
@@ -49,14 +63,14 @@ Content-length: 307
 {
   "value": [
     {
+      "id": "id-value",
       "roleId": "roleId-value",
       "administrativeUnitId": "administrativeUnitId-value",
       "roleMemberInfo": {
         "id": "id-value",
         "displayName": "displayName-value",
         "userPrincipalName": "userPrincipalName-value"
-      },
-      "id": "id-value"
+      }
     }
   ]
 }
