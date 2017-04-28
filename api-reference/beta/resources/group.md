@@ -82,11 +82,15 @@ This resource supports [delta query](../../../concepts/delta_query_overview.md) 
 |preferredLanguage|String|The preferred language for an Office 365 group. Should follow ISO 639-1 Code; for example "en-US".|
 |proxyAddresses|String collection| The **any** operator is required for filter expressions on multi-valued properties. Read-only. Not nullable. Supports $filter. |
 |resourceBehaviorOptions|String collection|Specifies the group behaviors, such as allowing only members to post conversations, that can be set for an Office 365 group. This can be set as part of creation (POST) or as part of an update (PATCH). Possible values are **allowOnlyMembersToPost**, **calendarMemberReadOnly**, **connectorsEnabled**, **reportToOriginator**, **subscriptionEnabled**, **subscribeMembersToCalendarEvents**, **subscribeNewGroupMembers**, **warmupEmailEnabled**, **welcomeEmailEnabled**. Nullable.|
-|resourceProvisioningOptions|String collection|Specifies the group resources to be provisioned as part of Office 365 group creation. Can only be set on POST. Possible values are **drive** to provision a group drive on first use, **conversationFeeds** to provision the use of Yammer for conversations (overrides the default use of Outlook conversations).|
+|resourceProvisioningOptions|String collection|Specifies the group resources to be provisioned as part of Office 365 group creation, that are not part of default group creation. Can only be set on POST. Possible values are **ConversationFeeds** to provision the use of Yammer for conversations (overrides the default use of Outlook conversations) and **Teams** to enable the group as a Microsoft Team.|
 |securityEnabled|Boolean|Specifies whether the group is a security group. If the **mailEnabled** property is also true, the group is a mail-enabled security group; otherwise it is a security group. Must be **false** for Office 365 groups. Supports $filter.|
 |theme|String|Specifies an Office 365 group's color theme. Possible values are **Teal**, **Purple**, **Green**, **Blue**, **Pink**, **Orange** or **Red**.|
 |unseenCount|Int32|Count of posts that the current  user has not seen since his last visit.|
 |visibility|String| Specifies the visibility of an Office 365 group. Possible values are: **Private**, **Public**, or empty (which is interpreted as **Public**).|
+
+### Additional notes for Office 365 groups
+
+resourceProvisioningOptions controls overrides to the resources provisioned as part of Group creation.
 
 ## Relationships
 
