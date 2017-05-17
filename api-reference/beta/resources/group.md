@@ -7,8 +7,7 @@ This resource lets you add your own data to custom properties using [extensions]
 
 ## Delta query support
 
-This resource supports [delta query](../../../concepts/delta_query_overview.md) to track incremental additions, deletions, and updates, 
-by providing a [delta](../api/group_delta.md) function.
+This resource supports [delta query](../../../concepts/delta_query_overview.md) to track incremental additions, deletions, and updates, by providing a [delta](../api/group_delta.md) function.
 
 ## Methods
 
@@ -61,7 +60,8 @@ by providing a [delta](../api/group_delta.md) function.
 |[Add schema extension values](../../../concepts/extensibility_schema_groups.md) || Create a schema extension definition and then use it to add custom typed data to a resource.|
 
 ## Properties
-| Property	   | Type	|Description|
+
+| Property   | Type	|Description|
 |:---------------|:--------|:----------|
 |allowExternalSenders|Boolean|Default is **false**. Indicates if people external to the organization can send messages to the group.|
 |autoSubscribeNewMembers|Boolean|Default is **false**. Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group.|
@@ -81,12 +81,19 @@ by providing a [delta](../api/group_delta.md) function.
 |onPremisesSyncEnabled|Boolean|**true** if this object is synced from an on-premises directory; **false** if this object was originally synced from an on-premises directory but is no longer synced; **null** if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter.|
 |preferredLanguage|String|The preferred language for an Office 365 group. Should follow ISO 639-1 Code; for example "en-US".|
 |proxyAddresses|String collection| The **any** operator is required for filter expressions on multi-valued properties. Read-only. Not nullable. Supports $filter. |
+|resourceBehaviorOptions|String collection|Specifies the group behaviors, such as allowing only members to post conversations, that can be set for an Office 365 group. This can be set as part of creation (POST) or as part of an update (PATCH). Possible values are **allowOnlyMembersToPost**, **calendarMemberReadOnly**, **connectorsEnabled**, **reportToOriginator**, **subscriptionEnabled**, **subscribeMembersToCalendarEvents**, **subscribeNewGroupMembers**, **warmupEmailEnabled**, **welcomeEmailEnabled**. Nullable.|
+|resourceProvisioningOptions|String collection|Specifies the group resources to be provisioned as part of Office 365 group creation, that are not part of default group creation. Can only be set on POST. Possible values are **ConversationFeeds** to provision the use of Yammer for conversations (overrides the default use of Outlook conversations) and **Teams** to enable the group as a Microsoft Team.|
 |securityEnabled|Boolean|Specifies whether the group is a security group. If the **mailEnabled** property is also true, the group is a mail-enabled security group; otherwise it is a security group. Must be **false** for Office 365 groups. Supports $filter.|
 |theme|String|Specifies an Office 365 group's color theme. Possible values are **Teal**, **Purple**, **Green**, **Blue**, **Pink**, **Orange** or **Red**.|
 |unseenCount|Int32|Count of posts that the current  user has not seen since his last visit.|
 |visibility|String| Specifies the visibility of an Office 365 group. Possible values are: **Private**, **Public**, **HiddenMembership**, or empty (which is interpreted as **Public**).|
 
+### Additional notes for Office 365 groups
+
+resourceProvisioningOptions controls overrides to the resources provisioned as part of Group creation.
+
 ## Relationships
+
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
 |acceptedSenders|[directoryObject](directoryobject.md) collection|The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.|
@@ -179,8 +186,9 @@ Here is a JSON representation of the resource
 ## See also
 
 - [Add custom data to resources using extensions](../../../concepts/extensibility_overview.md)
-- [Add custom data to users using open extensions (preview)](../../../concepts/extensibility_open_users.md)
-- [Add custom data to groups using schema extensions (preview)](../../../concepts/extensibility_schema_groups.md)
+- [Add custom data to users using open extensions](../../../concepts/extensibility_open_users.md)
+- [Add custom data to groups using schema extensions](../../../concepts/extensibility_schema_groups.md)
+
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->
