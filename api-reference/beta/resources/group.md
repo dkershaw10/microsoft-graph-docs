@@ -95,7 +95,7 @@ This resource supports:
 |onPremisesSyncEnabled|Boolean|**true** if this object is synced from an on-premises directory; **false** if this object was originally synced from an on-premises directory but is no longer synced; **null** if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter.|
 |preferredLanguage|String|The preferred language for an Office 365 group. Should follow ISO 639-1 Code; for example "en-US".|
 |proxyAddresses|String collection| For example: `["SMTP: bob@contoso.com", "smtp: bob@sales.contoso.com"]` The **any** operator is required for filter expressions on multi-valued properties. Read-only. Not nullable. Supports $filter. |
-|resourceBehaviorOptions|String collection|Specifies the group behaviors that can be set for an Office 365 group during creation. This can be set only as part of creation (POST). Possible values are **AllowOnlyMembersToPost**, **CalendarMemberReadOnly**, **ConnectorsEnabled**, **ReportToOriginator**, **SharePointReadonlyForMembers**, **SubscriptionEnabled**, **SubscribeMembersToCalendarEvents**, **SubscribeNewGroupMembers**, **WarmupEmailEnabled**, **WelcomeEmailEnabled**.  More details are avaialble below.|
+|resourceBehaviorOptions|String collection|Specifies the group behaviors that can be set for an Office 365 group during creation. This can be set only as part of creation (POST). Possible values are **AllowOnlyMembersToPost**, **CalendarMemberReadOnly**, **ConnectorsEnabled**, **ReportToOriginator**, **SharePointReadonlyForMembers**, **SubscriptionEnabled**, **SubscribeMembersToCalendarEvents**, **SubscribeNewGroupMembers**, **WelcomeEmailEnabled**.  More details are avaialble below.|
 |resourceProvisioningOptions|String collection|Specifies the group resources that are provisioned as part of Office 365 group creation, that are not normally part of default group creation. Possible values are **ConversationFeeds**, **ProvisionDriveOnFirstUse**, and **Teams**. More details are avaialble below.|
 |securityEnabled|Boolean|Specifies whether the group is a security group. If the **mailEnabled** property is also true, the group is a mail-enabled security group; otherwise it is a security group. Must be **false** for Office 365 groups. Supports $filter.|
 |theme|String|Specifies an Office 365 group's color theme. Possible values are **Teal**, **Purple**, **Green**, **Blue**, **Pink**, **Orange** or **Red**.|
@@ -136,22 +136,16 @@ Groups can be further configured using the `resourceBehaviorOptions` and `resour
 
 | `resourceBehaviorOptions`   |Description|Default if not set|
 |:---------------|:--------|:-----------|
-|**AllowFileSharingForGuestUsers**|||
-| **AllowOnlyMembersToPost**|||
-|**CalendarMemberReadOnly**|||
-|**ConnectorsEnabled**|||
-|**Groupify** |||
-|**PLC**| **What does this stand for?** Should be renamed||
-|**ProvisionGroupHomepage**|||
-| **ReportToOriginator**|||
-| **SharePointReadonlyForMembers**|||
-|**SiteAlias**|||
-|**SitePagePublishingSite**|||
-| **SubscriptionEnabled**|||
-| **SubscribeMembersToCalendarEvents**|||
-| **SubscribeNewGroupMembers**|||
-| **WarmupEmailEnabled**|||
-| **WelcomeEmailEnabled**|||
+| **AllowOnlyMembersToPost**|Only *members* of the group can post conversations.|Any user in the organization can post conversations to the group.|
+|**CalendarMemberReadOnly**|Only *owners* can create, update and delete group calendar events.| Group *members* can create, update and delete group calendar events.|
+|**ConnectorsEnabled**|Connector features for the group are enabled.| Connector features are disabled.|
+|**ProfessionalLearningCommunities**| **What does this stand for?** Can we call this **OneNoteForLearningCommunitiesEnabled**||
+| **ReportToOriginator**|???|???|
+| **SharePointReadonlyForMembers**|*Members* can only read files in the group's sites.|*Members* can read and write files in the group's site.|
+| **SubscriptionEnabled**|Members of the group cannot unsubscribe themselves from the group manually.|Members of the group can unsubscribe from the group.|
+| **SubscribeMembersToCalendarEvents**|???|???|
+| **SubscribeNewGroupMembers**|???|???|
+| **WelcomeEmailEnabled**|A welcome email will be sent to a new member on joining the group.|No welcome emails are sent to new members.|
 
 `resourceProvisioningOptions` is a String collection that specifies the group resources that are provisioned as part of Office 365 group creation, that are not normally part of default group creation.
 
