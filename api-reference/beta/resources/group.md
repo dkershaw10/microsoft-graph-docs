@@ -136,16 +136,16 @@ Groups can be further configured using the `resourceBehaviorOptions` and `resour
 
 | `resourceBehaviorOptions`   |Description|Default if not set|
 |:---------------|:--------|:-----------|
-| **AllowOnlyMembersToPost**|Only *members* of the group can post conversations.|Any user in the organization can post conversations to the group.|
-|**CalendarMemberReadOnly**|Only *owners* can create, update and delete group calendar events.| Group *members* can create, update and delete group calendar events.|
+| **AllowOnlyMembersToPost**|Only group *members* can post conversations to the group.|Any user in the organization can post conversations to the group.|
+|**CalendarMemberReadOnly**|Only group *owners* can create, update and delete group calendar events.| Group *members* can create, update and delete group calendar events.|
 |**ConnectorsEnabled**|Connector features for the group are enabled.| Connector features are disabled.|
-|**ProfessionalLearningCommunities**| **What does this stand for?** Can we call this **OneNoteForLearningCommunitiesEnabled**||
+|**NotebookForLearningCommunitiesEnabled**| Configures the group to come with a notebook template designed specifically for Professional Learning Communities (PLCs) to get started quickly.| The group comes with the standard notebook template.|
 | **ReportToOriginator**|???|???|
-| **SharePointReadonlyForMembers**|*Members* can only read files in the group's sites.|*Members* can read and write files in the group's site.|
-| **SubscriptionEnabled**|Members of the group cannot unsubscribe themselves from the group manually.|Members of the group can unsubscribe from the group.|
-| **SubscribeMembersToCalendarEvents**|???|???|
-| **SubscribeNewGroupMembers**|???|???|
-| **WelcomeEmailEnabled**|A welcome email will be sent to a new member on joining the group.|No welcome emails are sent to new members.|
+| **SharePointReadonlyForMembers**|Group *members* can only read files in the group's sites.|*Members* can read and write files in the group's site.|
+| **SubscriptionEnabled**|Group members cannot unsubscribe themselves from the group manually.|Group members can unsubscribe from the group.|
+| **SubscribeMembersToCalendarEvents**|Group members are subscribed to receive group calendar events.|Group members do not recieve group calendar events.|
+| **SubscribeNewGroupMembers**|Group members are subscribed to receive group conversations. |Group members do not receive group conversations.|
+| **WelcomeEmailEnabled**|A welcome email is sent to a new member on joining the group.|No welcome emails are sent to new members.|
 
 `resourceProvisioningOptions` is a String collection that specifies the group resources that are provisioned as part of Office 365 group creation, that are not normally part of default group creation.
 
