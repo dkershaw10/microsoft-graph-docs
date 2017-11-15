@@ -95,6 +95,8 @@ This resource supports:
 |onPremisesSyncEnabled|Boolean|**true** if this object is synced from an on-premises directory; **false** if this object was originally synced from an on-premises directory but is no longer synced; **null** if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter.|
 |preferredLanguage|String|The preferred language for an Office 365 group. Should follow ISO 639-1 Code; for example "en-US".|
 |proxyAddresses|String collection| For example: `["SMTP: bob@contoso.com", "smtp: bob@sales.contoso.com"]` The **any** operator is required for filter expressions on multi-valued properties. Read-only. Not nullable. Supports $filter. |
+|resourceBehaviorOptions|String collection|Specifies the group behaviors that can be set for an Office 365 group during creation. This can be set only as part of creation (POST). Possible values are **AllowOnlyMembersToPost**, **CalendarMemberReadOnly**, **ConnectorsEnabled**, **NotebookForLearningCommunitiesEnabled**, **ReportToOriginator**, **SharePointReadonlyForMembers**, **SubscriptionEnabled**, **SubscribeMembersToCalendarEvents**, **SubscribeNewGroupMembers**, **WelcomeEmailEnabled**.  More details are avaialble below.|
+|resourceProvisioningOptions|String collection|Specifies the group resources that are provisioned as part of Office 365 group creation, that are not normally part of default group creation. Possible values are **ConversationFeeds**, **ProvisionDriveOnFirstUse**, and **Teams**. More details are available below.|
 |securityEnabled|Boolean|Specifies whether the group is a security group. If the **mailEnabled** property is also true, the group is a mail-enabled security group; otherwise it is a security group. Must be **false** for Office 365 groups. Supports $filter.|
 |theme|String|Specifies an Office 365 group's color theme. Possible values are **Teal**, **Purple**, **Green**, **Blue**, **Pink**, **Orange** or **Red**.|
 |unseenCount|Int32|Count of posts that the current  user has not seen since his last visit.|
@@ -125,6 +127,33 @@ This resource supports:
 |settings|[directorySetting](directorySetting.md) collection| Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.|
 |sites|[site](site.md) collection|The list of SharePoint sites in this group. Access the default site with /sites/root.
 |threads|[conversationThread](conversationthread.md) collection| The group's conversation threads. Nullable.|
+
+## Additional details on provisioning and configuring groups
+
+Groups can be further configured using the `resourceBehaviorOptions` and `resourceProvisioningOptions`:
+
+`resourceBehaviorOptions` is a String collection that specifies the group behaviors that can be set for an Office 365 group during creation. This can be set only as part of creation (POST):
+
+| `resourceBehaviorOptions`   |Description|Default if not set|
+|:---------------|:--------|:-----------|
+| **AllowOnlyMembersToPost**|Only group *members* can post conversations to the group.|Any user in the organization can post conversations to the group.|
+|**CalendarMemberReadOnly**|Only group *owners* can create, update and delete group calendar events.| Group *members* can create, update and delete group calendar events.|
+|**ConnectorsEnabled**|Connector features for the group are enabled.| Connector features are disabled.|
+|**NotebookForLearningCommunitiesEnabled**| Configures the group to come with a notebook template designed specifically for Professional Learning Communities (PLCs) to get started quickly.| The group comes with the standard notebook template.|
+| **ReportToOriginator**|???|???|
+| **SharePointReadonlyForMembers**|Group *members* can only read files in the group's sites.|*Members* can read and write files in the group's site.|
+| **SubscriptionEnabled**|Group members cannot unsubscribe themselves from the group manually.|Group members can unsubscribe from the group.|
+| **SubscribeMembersToCalendarEvents**|Group members are subscribed to receive group calendar events.|Group members do not recieve group calendar events.|
+| **SubscribeNewGroupMembers**|Group members are subscribed to receive group conversations. |Group members do not receive group conversations.|
+| **WelcomeEmailEnabled**|A welcome email is sent to a new member on joining the group.|No welcome emails are sent to new members.|
+
+`resourceProvisioningOptions` is a String collection that specifies the group resources that are provisioned as part of Office 365 group creation, that are not normally part of default group creation.
+
+| `resourceProvisioningOptions`   |Description| Default if not set |
+|:---------------|:--------|:------------|
+| **ConversationFeeds**|Provision this group as a Yammer group (using Yammer conversation feeds). This will disable the default Groups conversation functionality. **NOTE**: There are currently no Microsoft Graph APIs that provide access to Yammer conversation feeds.| Standard conversation functionality, that can be controlled using the group [conversation resource](conversation.md)|
+| **ProvisionDriveOnFirstUse**|Defer creation of the group's drive (document library) until the first user tries to access it. |On group creation, a new drive (document library) will be created for the group, that will be available for use very shortly after group creation.|
+| **Teams**|Provision this group as a Team. Additionally this property may be added to the `resourceProvisioningOptions` string collection through a PATCH operation, in order to convert an existing Office 365 group to a Team.| Standard Office 365 group.|
 
 ## JSON representation
 
