@@ -11,7 +11,7 @@ author: "davidmu1"
 
 [!INCLUDE [beta-disclaimer](../../includes/beta-disclaimer.md)]
 
-Represents an identity used to sign in to a user account or other security principals, although this is currently only supported for users. An identity can be provided by Microsoft, by organizations, or by social identity providers such as FaceBook, Google, Microsoft Account, that are tied to a user account. This enables the user to sign in with any of those associated identities.
+Represents an identity used to sign in to a user account or other security principals, although this is currently only supported for users. An identity can be provided by Microsoft, by organizations, or by social identity providers such as FaceBook, Google, or Microsoft Account, that are tied to a user account. This enables the user to sign in to the user account with any of those associated identities.
 
 The **identities** property of the [user](user.md) resource is an **objectIdentity** object.
 
@@ -19,9 +19,9 @@ The **identities** property of the [user](user.md) resource is an **objectIdenti
 
 | Property   | Type |Description|
 |:---------------|:--------|:----------|
-|`signInType`|`string`| Specifies the user sign-in types in your directory, such as **emailAddress**, **userName** or **federated**. **federated** represents a unique identifier for a user from an issuer, that may be in any format chosen by the issuer. Multiple email address **signInTypes** may be specified too, such as **emailAddress1**, **emailAddress2** etc. Default is **emailAddress**. Filterable.|
-|`issuer`|`string`|Specifies the issuer of the identity, for example **facebook.com**. For local accounts this property is the local B2C domain name, for example **contoso.onmicrosoft.com**. For external users from other Azure AD organization, this will be the domain of the federated organization, for example **contoso.com**. Filterable. 512 character limit.|
-|`issuerAssignedId`|`string`|Specifies the unique identifier assigned to the user by the issuer. The combination of `issuer` and `issuerAssignedId` must be unique within the organization. For local accounts, this property will represent the sign-in name for the user.  Filterable. 512 character limit.|
+|signInType|string| Specifies the user sign-in types in your directory, such as `emailAddress`, `userName` or `federated`. `federated` represents a unique identifier for a user from an issuer, that may be in any format chosen by the issuer. Additional validation is enforced on **issuerAssignedId** when the sign-in type is set to `emailAddress` or `userName`. This property can also be set to any custom string.<br><br>Filterable.|
+|issuer|string|Specifies the issuer of the identity, for example `facebook.com`.<br>For local accounts (where **signInType** is not `federated`), this property is the local B2C tenant default domain name, for example `contoso.onmicrosoft.com`.<br>For external users from other Azure AD organization, this will be the domain of the federated organization, for example `contoso.com`.<br><br>Filterable. 512 character limit.|
+|issuerAssignedId|string|Specifies the unique identifier assigned to the user by the issuer. The combination of **issuer** and **issuerAssignedId** must be unique within the organization. Represents the sign-in name for the user, when **signInType** is set to `emailAddress` or `userName`.<br>When **signInType** is set to: <ul><li>`emailAddress`, **issuerAssignedId** must be a valid email address</li><li>`userName`, **issuerAssignedId** must be a valid [local part of an email address](https://tools.ietf.org/html/rfc3696#section-3)</li></ul>Filterable. 512 character limit.|
 
 ## JSON representation
 
@@ -41,7 +41,6 @@ Here is a JSON representation of the resource
   "issuer": "string",
   "issuerAssignedId": "string"
 }
-
 ```
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
